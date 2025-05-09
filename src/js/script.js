@@ -22,3 +22,76 @@ function validarEntrada(mensagem) {
     }
     return valor;
 }
+
+
+//FUNÇÃO VERIFICAR ESTOQUE
+
+
+
+
+
+
+
+//FUNÇÃO CLASSIFICAR SAFRA
+
+
+
+
+
+
+//FUNÇÃO MOSTRAR DADOS
+
+
+
+
+
+// LOOP DE CADASTRO
+
+
+
+
+
+
+
+
+    // ARMAZENAMENTO EM VARIAVIES UNICAS
+    if (totalCadastros === 1) {
+        nome1 = nome; tipo1 = tipo; safra1 = safra; qtd1 = qtd;
+    } else if (totalCadastros === 2) {
+        nome2 = nome; tipo2 = tipo; safra2 = safra; qtd2 = qtd;
+    } else if (totalCadastros === 3) {
+        nome3 = nome; tipo3 = tipo; safra3 = safra; qtd3 = qtd;
+    } else if (totalCadastros === 4) {
+        nome4 = nome; tipo4 = tipo; safra4 = safra; qtd4 = qtd;
+    } else if (totalCadastros === 5) {
+        nome5 = nome; tipo5 = tipo; safra5 = safra; qtd5 = qtd;
+    } else if (totalCadastros === 6) {
+        nome6 = nome; tipo6 = tipo; safra6 = safra; qtd6 = qtd;
+    } else if (totalCadastros === 7) {
+        nome7 = nome; tipo7 = tipo; safra7 = safra; qtd7 = qtd;
+    } else if (totalCadastros === 8) {
+        nome8 = nome; tipo8 = tipo; safra8 = safra; qtd8 = qtd;
+    } else if (totalCadastros === 9) {
+        nome9 = nome; tipo9 = tipo; safra9 = safra; qtd9 = qtd;
+    } else if (totalCadastros === 10) {
+        nome10 = nome; tipo10 = tipo; safra10 = safra; qtd10 = qtd;
+    }
+
+    
+    // VERIFICAR SAFRA MAIS ANTIGA
+    if (safra < menorSafra) {
+        menorSafra = safra;
+        vinhoMaisAntigo = nome;
+    }
+
+    if (totalCadastros < 10) {
+        var resposta = prompt("Deseja cadastrar outro vinho? (s/n)");
+        if (resposta !== "s" && resposta !== "S") {
+            continuar = false;
+        }
+    } else {
+        alert("Limite de 10 cadastros atingido.");
+    }
+
+
+// EXIBIR RESUMO FINAL (alert e console.log)
