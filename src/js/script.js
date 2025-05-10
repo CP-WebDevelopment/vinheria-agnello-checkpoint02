@@ -28,10 +28,6 @@ function validarEntrada(mensagem) {
 
 
 
-
-
-
-
 //FUNÇÃO CLASSIFICAR SAFRA
 
 
@@ -46,12 +42,20 @@ function validarEntrada(mensagem) {
 
 
 // LOOP DE CADASTRO
+while (continuar && totalCadastros < 10) {
+    totalCadastros++;
 
+    var nome = validarEntrada("Digite o nome do vinho:");
+    var tipo = validarEntrada("Digite o tipo do vinho (Tinto, Branco ou Rosê):");
+    var safra = parseInt(validarEntrada("Digite a safra do vinho:"));
+    var qtd = parseInt(validarEntrada("Digite a quantidade do vinho:"));
 
+    var classificacao = classificarSafra(safra);
+    if (verificarEstoque(qtd)) {
+        estoqueBaixo++;
+    }
 
-
-
-
+    mostrarDados(nome, tipo, safra, qtd, classificacao);
 
 
     // ARMAZENAMENTO EM VARIAVIES UNICAS
@@ -84,6 +88,8 @@ function validarEntrada(mensagem) {
         vinhoMaisAntigo = nome;
     }
 
+
+    //CONTINUAR?
     if (totalCadastros < 10) {
         var resposta = prompt("Deseja cadastrar outro vinho? (s/n)");
         if (resposta !== "s" && resposta !== "S") {
@@ -95,3 +101,11 @@ function validarEntrada(mensagem) {
 
 
 // EXIBIR RESUMO FINAL (alert e console.log)
+
+
+
+
+
+
+
+}
