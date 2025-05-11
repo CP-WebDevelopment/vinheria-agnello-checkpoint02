@@ -98,10 +98,16 @@ while (continuar && totalCadastros < 10) {
 
     
     // VERIFICAR SAFRA MAIS ANTIGA
-    if (safra < menorSafra) {
+    if (menorSafra === new Date().getFullYear()) {
+        // Primeira safra registrada
+        menorSafra = safra;
+        vinhoMaisAntigo = nome;
+    } else if (safra < menorSafra) {
+        // Nova safra mais antiga encontrada
         menorSafra = safra;
         vinhoMaisAntigo = nome;
     }
+
 
 
     //CONTINUAR?
