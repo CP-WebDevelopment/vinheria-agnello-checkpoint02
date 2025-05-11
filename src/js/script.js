@@ -31,10 +31,13 @@ function verificarEstoque(quantidade) {
 
 
 //FUNÇÃO CLASSIFICAR SAFRA
-
-
-
-
+function classificarSafra(safra) {
+    var anoAtual = new Date().getFullYear();
+    var idade = anoAtual - safra;
+    if (idade <= 5) return "Jovem";
+    if (idade <= 15) return "Amadurecido";
+    return "Antigo";
+}
 
 
 //FUNÇÃO MOSTRAR DADOS
