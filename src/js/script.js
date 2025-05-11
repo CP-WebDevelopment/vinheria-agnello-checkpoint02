@@ -24,8 +24,10 @@ function validarEntrada(mensagem) {
 }
 
 
-//FUNÇÃO VERIFICAR ESTOQUE
-
+// FUNÇÃO VERIFICAR ESTOQUE
+function verificarEstoque(quantidade) {
+    return quantidade < 5;
+}
 
 
 //FUNÇÃO CLASSIFICAR SAFRA
