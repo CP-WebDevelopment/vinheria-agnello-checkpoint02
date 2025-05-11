@@ -41,9 +41,19 @@ function classificarSafra(safra) {
 
 
 //FUNÇÃO MOSTRAR DADOS
-
-
-
+function mostrarDados(nome, tipo, safra, qtd, classificacao) {
+    var mensagem = "📦 Vinho cadastrado:\n";
+    mensagem += "Nome: " + nome + "\n";
+    mensagem += "Tipo: " + tipo + "\n";
+    mensagem += "Safra: " + safra + "\n";
+    mensagem += "Quantidade: " + qtd + "\n";
+    mensagem += "Classificação: " + classificacao + "\n";
+    if (verificarEstoque(qtd)) {
+        mensagem += "⚠️ Estoque Baixo!\n";
+    }
+    alert(mensagem);
+    console.log(mensagem);
+}
 
 
 // LOOP DE CADASTRO
