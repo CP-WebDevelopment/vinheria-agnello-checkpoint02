@@ -1,5 +1,9 @@
 var totalCadastros = 0;
 var estoqueBaixo = 0;
+var continuar = true; 
+var menorSafra = Infinity; 
+var vinhoMaisAntigo = "";
+var anoAtual = 2025; 
 
 // VARIÁVEIS INDIVIDUAIS (ATÉ 10 VINHOS)
 var nome1, tipo1, safra1, qtd1;
@@ -23,24 +27,20 @@ function validarEntrada(mensagem) {
     return valor;
 }
 
-
 // FUNÇÃO VERIFICAR ESTOQUE
 function verificarEstoque(quantidade) {
     return quantidade < 5;
 }
 
-
-//FUNÇÃO CLASSIFICAR SAFRA
+// FUNÇÃO CLASSIFICAR SAFRA
 function classificarSafra(safra) {
-    var anoAtual = new Date().getFullYear();
     var idade = anoAtual - safra;
     if (idade <= 5) return "Jovem";
     if (idade <= 15) return "Amadurecido";
     return "Antigo";
 }
 
-
-//FUNÇÃO MOSTRAR DADOS
+// FUNÇÃO MOSTRAR DADOS
 function mostrarDados(nome, tipo, safra, qtd, classificacao) {
     var mensagem = "📦 Vinho cadastrado:\n";
     mensagem += "Nome: " + nome + "\n";
@@ -54,7 +54,6 @@ function mostrarDados(nome, tipo, safra, qtd, classificacao) {
     alert(mensagem);
     console.log(mensagem);
 }
-
 
 // LOOP DE CADASTRO
 while (continuar && totalCadastros < 10) {
@@ -72,8 +71,7 @@ while (continuar && totalCadastros < 10) {
 
     mostrarDados(nome, tipo, safra, qtd, classificacao);
 
-
-    // ARMAZENAMENTO EM VARIAVIES UNICAS
+    // ARMAZENAMENTO EM VARIÁVEIS INDIVIDUAIS
     if (totalCadastros === 1) {
         nome1 = nome; tipo1 = tipo; safra1 = safra; qtd1 = qtd;
     } else if (totalCadastros === 2) {
@@ -96,39 +94,23 @@ while (continuar && totalCadastros < 10) {
         nome10 = nome; tipo10 = tipo; safra10 = safra; qtd10 = qtd;
     }
 
-    
     // VERIFICAR SAFRA MAIS ANTIGA
-    Var menorSafra = infinity;
-    Var vinhoMaisAntigo="";
-    if (menorSafra === new Date().getFullYear()) {
-        // Primeira safra registrada
-        menorSafra = safra;
-        vinhoMaisAntigo = nome;
-    } else if (safra < menorSafra) {
-        // Nova safra mais antiga encontrada
+    if (safra < menorSafra) {
         menorSafra = safra;
         vinhoMaisAntigo = nome;
     }
 
-
-
-    //CONTINUAR?
+    // CONTINUAR?
     if (totalCadastros < 10) {
         var resposta = prompt("Deseja cadastrar outro vinho? (s/n)");
         if (resposta !== "s" && resposta !== "S") {
             continuar = false;
+            alert("✅ Cadastro finalizado. Confira os dados no console.");
         }
     } else {
         alert("Limite de 10 cadastros atingido.");
+        alert("✅ Cadastro finalizado. Confira os dados no console.");
     }
-
-
-// EXIBIR RESUMO FINAL (alert e console.log)
-
-
-
-
-
-
-
 }
+
+// EXIBIR RESUMO FINAL
