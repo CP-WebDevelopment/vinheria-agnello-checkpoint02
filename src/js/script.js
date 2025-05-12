@@ -114,11 +114,10 @@ while (continuar && totalCadastros < 10) {
 }
 
 // EXIBIR RESUMO FINAL
-var resumo = "Resumo final dos vinhos:\n\n";
+var resumo = "Resumo final dos vinhos:\n";
 
 resumo += "Total cadastrados: " + totalCadastros + "\n";
 resumo += "Com estoque baixo: " + estoqueBaixo + "\n";
 resumo += "Mais antigo: " + vinhoMaisAntigo + " (" + menorSafra + ")\n";
 
-alert(resumo);
 console.log(resumo);
