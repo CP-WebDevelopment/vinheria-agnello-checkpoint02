@@ -114,3 +114,24 @@ while (continuar && totalCadastros < 10) {
 }
 
 // EXIBIR RESUMO FINAL
+var resumo = "Resumo final dos vinhos:\n\n";
+
+for (var i = 1; i <= totalCadastros; i++) {
+    var nome = eval("nome" + i);
+    var tipo = eval("tipo" + i);
+    var safra = eval("safra" + i);
+    var qtd = eval("qtd" + i);
+
+    resumo += "Vinho " + i + ":\n";
+    resumo += "Nome: " + nome + "\n";
+    resumo += "Tipo: " + tipo + "\n";
+    resumo += "Safra: " + safra + "\n";
+    resumo += "Quantidade: " + qtd + "\n\n";
+}
+
+resumo += "Total cadastrados: " + totalCadastros + "\n";
+resumo += "Com estoque baixo: " + estoqueBaixo + "\n";
+resumo += "Mais antigo: " + vinhoMaisAntigo + " (" + menorSafra + ")\n";
+
+alert(resumo);
+console.log(resumo);
